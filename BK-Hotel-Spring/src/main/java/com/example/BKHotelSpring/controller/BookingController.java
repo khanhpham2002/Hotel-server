@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/bookings")
-@CrossOrigin("*")
+
 public class BookingController {
 
     private final IBookingService bookingService;
@@ -60,7 +60,6 @@ public class BookingController {
     @DeleteMapping("/booking/{bookingId}/delete")
     public void cancelBooking(@PathVariable Long bookingId){
         bookingService.cancelBooking(bookingId);
-
     }
 
     private BookingResponse getBookingResponse(BookedRoom booking) {
